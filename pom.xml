@@ -1,0 +1,110 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.sidgul.challenge</groupId>
+    <artifactId>users-client</artifactId>
+    <version>0.1.0</version>
+
+    <properties>
+        <java.version>17</java.version>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+
+        <!-- Dependency Versions -->
+        <junit.version>4.12</junit.version>
+        <apache.httpclient5.version>5.3</apache.httpclient5.version>
+        <apache.commons-configuration2.version>2.9.0</apache.commons-configuration2.version>
+        <org.json.version>20231013</org.json.version>
+        <logging.slf4j.version>2.0.9</logging.slf4j.version>
+        <junit.juniper.version>5.7.0</junit.juniper.version>
+        <maven.plugun.execjava.version>3.0.0</maven.plugun.execjava.version>
+        <maven.plugun.javadoc.version>3.6.3</maven.plugun.javadoc.version>
+    </properties>
+
+    <dependencies>
+        <!-- HTTP Client -->
+        <!-- https://mvnrepository.com/artifact/org.apache.httpcomponents.client5/httpclient5 -->
+        <dependency>
+            <groupId>org.apache.httpcomponents.client5</groupId>
+            <artifactId>httpclient5</artifactId>
+            <version>${apache.httpclient5.version}</version>
+        </dependency>
+
+        <!-- Configuration -->
+        <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-configuration2 -->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-configuration2</artifactId>
+            <version>${apache.commons-configuration2.version}</version>
+        </dependency>
+
+        <!-- JSON Handling -->
+        <!-- https://mvnrepository.com/artifact/org.json/json -->
+        <dependency>
+            <groupId>org.json</groupId>
+            <artifactId>json</artifactId>
+            <version>${org.json.version}</version>
+        </dependency>
+
+
+
+
+        <!-- SLF4J API -->
+        <!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-api -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>${logging.slf4j.version}</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-simple -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-simple</artifactId>
+            <version>${logging.slf4j.version}</version>
+        </dependency>
+
+
+        <!-- TEST - JUnit Jupiter API -->
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>${junit.juniper.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- TEST - JUnit Jupiter Engine  -->
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
+            <version>${junit.juniper.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+    </dependencies>
+
+    <build>
+        <plugins>
+            <!-- build plugin to execute main driver -->
+            <!-- mvn exec:java -->
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>${maven.plugun.execjava.version}</version>
+                <configuration>
+                    <mainClass>com.sidgul.challenge.users.client.UsersClientDriver</mainClass>
+                </configuration>
+            </plugin>
+            <!-- build plugin to generate javadoc -->
+            <!-- mvn javadoc:javadoc -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>${maven.plugun.javadoc.version}</version>
+                <configuration>
+
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>
