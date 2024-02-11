@@ -2,19 +2,9 @@ package com.sidgul.challenge.users.client;
 
 import com.sidgul.challenge.http.client.HttpException;
 import com.sidgul.challenge.http.client.IHttpClient;
-import org.apache.hc.client5.http.classic.methods.HttpGet;
-import org.apache.hc.client5.http.impl.classic.CloseableHttpClient;
-import org.apache.hc.client5.http.impl.classic.CloseableHttpResponse;
-import org.apache.hc.client5.http.impl.classic.HttpClients;
-import org.apache.hc.core5.http.HttpStatus;
-import org.apache.hc.core5.http.ParseException;
-import org.apache.hc.core5.http.io.entity.EntityUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.io.IOException;
-import java.net.MalformedURLException;
-import java.net.URL;
 import java.util.List;
 import java.util.Properties;
 
@@ -27,7 +17,7 @@ public class UsersClient implements IUsersClient {
     public static final String USERS_CLIENT_API_URL = "users.client.api.url";
     private final IHttpClient httpClient;
     private IUsersUnmarshaller usersUnmarshaller = new UsersUnmarshaller();
-    private String apiUrl;
+    private final String apiUrl;
 
     public UsersClient(Properties configuration, IHttpClient httpClient, IUsersUnmarshaller usersUnmarshaller) throws UsersClientError {
         validateConfiguration(configuration);

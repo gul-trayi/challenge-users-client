@@ -10,5 +10,5 @@ public interface IHttpClient {
      * @return response body as String
      * @throws HttpException wrapped with inner exception (if any) in case of any errors performing HTTP GET to the url
      */
-    public String GET(String url, Map<String,String> headers) throws HttpException ;
+    String GET(String url, Map<String, String> headers) throws HttpException;
 }

@@ -10,10 +10,10 @@ package com.sidgul.challenge.users.client;
  * - Objects are immutable once created
  */
 public class User {
-    private int id;
-    private String email;
-    private String firstName;
-    private String lastName;
+    private final int id;
+    private final String email;
+    private final String firstName;
+    private final String lastName;
 
     // Constructor
     public User(int id, String email, String firstName, String lastName) {

@@ -14,7 +14,7 @@ import java.util.Properties;
  */
 public class UsersClientFactory {
     private static final Logger logger = LoggerFactory.getLogger(UsersClientFactory.class);
-    private Properties configuration;
+    private final Properties configuration;
 
     public UsersClientFactory(Properties configuration) {
         this.configuration = configuration;

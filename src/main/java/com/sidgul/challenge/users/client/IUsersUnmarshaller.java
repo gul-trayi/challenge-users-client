@@ -11,6 +11,6 @@ public interface IUsersUnmarshaller {
      * @param usersData user data as a String
      * @return list of user objects
      */
-    public List<User> unmarshalUsers(String usersData);
+    List<User> unmarshalUsers(String usersData);
 
 }

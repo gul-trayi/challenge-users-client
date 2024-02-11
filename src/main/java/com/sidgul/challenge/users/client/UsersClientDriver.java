@@ -25,7 +25,7 @@ public class UsersClientDriver {
         Properties configuration = new Properties();
         try {
             configuration.load(UsersClientDriver.class.getClassLoader().getResourceAsStream(APPLICATION_PROPERTIES));
-        } catch(IOException ioEx) {
+        } catch (IOException ioEx) {
             throw new UsersClientError(String.format("Fatal error: cannot load %s from class path", APPLICATION_PROPERTIES), ioEx);
         }
 
@@ -35,7 +35,7 @@ public class UsersClientDriver {
 
         // Get first page of Users from UsersClient
         List<User> usersFromFirstPage = usersClient.getUsers(0);
-        for(User currentUser : usersFromFirstPage) {
+        for (User currentUser : usersFromFirstPage) {
             logger.info(String.format("First Name: %s Last Name: %s", currentUser.getFirstName(), currentUser.getLastName()));
         }
 

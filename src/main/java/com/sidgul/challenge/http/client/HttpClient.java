@@ -1,6 +1,5 @@
 package com.sidgul.challenge.http.client;
 
-import com.sidgul.challenge.users.client.UsersClientError;
 import org.apache.hc.client5.http.classic.methods.HttpGet;
 import org.apache.hc.client5.http.impl.classic.CloseableHttpClient;
 import org.apache.hc.client5.http.impl.classic.CloseableHttpResponse;
@@ -16,8 +15,9 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Map;
 
-public class HttpClient implements IHttpClient{
+public class HttpClient implements IHttpClient {
     private static final Logger logger = LoggerFactory.getLogger(HttpClient.class);
+
     /***
      * A simple implementation for abstracting the HTTP get method
      * @param url URL to get

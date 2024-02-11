@@ -1,14 +1,15 @@
 package com.sidgul.challenge.users.client;
 
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.AfterAll;
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Test;
 
 import java.util.List;
 import java.util.Properties;
 
-class UserClientTest{
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+class UserClientTest {
 
     public static final int EXPECTED_USERS_COUNT_PAGE0 = 6;
     public static final String EXPECTED_USER0_PAGE0_FIRSTNAME = "George";
@@ -18,7 +19,7 @@ class UserClientTest{
     @BeforeAll
     static void setUp() {
         // initialize users client
-       configuration = new Properties();
+        configuration = new Properties();
         configuration.setProperty("users.client.api.url", "https://reqres.in/api/users");
 
         UsersClientFactory usersClientFactory = new UsersClientFactory(configuration);
